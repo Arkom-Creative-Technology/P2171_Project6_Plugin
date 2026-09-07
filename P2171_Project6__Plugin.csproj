@@ -92,6 +92,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatePGSISurveyScores.cs" />
     <Compile Include="CalculateAUDITSurveyScores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

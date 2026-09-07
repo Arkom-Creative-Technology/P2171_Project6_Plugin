@@ -58,16 +58,15 @@ namespace P2171_Project6_Plugin
 					var questionTen = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question10")?.Value ?? 0;
 
 					//Set the question scores
-					entity["ark_q1score"] = questionOne;
-					entity["ark_q2score"] = questionTwo;
-					entity["ark_q3score"] = questionThree;
-					entity["ark_q4score"] = questionFour;
-					entity["ark_q5score"] = questionFive;
-					entity["ark_q6score"] = questionSix;
-					entity["ark_q7score"] = questionSeven;
-					entity["ark_q8score"] = questionEight;
-					entity["ark_q9score"] = questionNine;
-					entity["ark_q10score"] = questionTen;
+					entity["ark_q1score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question1")?.Value;
+					entity["ark_q2score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question2")?.Value;
+					entity["ark_q3score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question3")?.Value;
+					entity["ark_q4score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question4")?.Value;
+					entity["ark_q5score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question5")?.Value;
+					entity["ark_q6score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question6")?.Value;
+					entity["ark_q7score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question7")?.Value;
+					entity["ark_q8score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question8")?.Value;
+					entity["ark_q9score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question9")?.Value;
 
 					//Calculate overall score
 					entity["ark_overallscore"] = new[]
