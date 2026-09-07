@@ -27,6 +27,7 @@ namespace P2171_Project6_Plugin
 
 			tracingService.Trace("CalculateAUDITSurveyScores: Plugin execution started.");
 
+
 			if (context.InputParameters.Contains("Target") && context.InputParameters["Target"] is Entity)
 			{
 				Entity entity = (Entity)context.InputParameters["Target"];
@@ -42,19 +43,19 @@ namespace P2171_Project6_Plugin
 					}
 					else
 					{
-						surveyAUDIT = context.PreEntityImages["PreEntityImage"];
+						surveyAUDIT = (Entity)context.PostEntityImages["PostImage"];
 					}
 
-					var questionOne = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question1");
-					var questionTwo = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question2");
-					var questionThree = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question3");
-					var questionFour = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question4");
-					var questionFive = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question5");
-					var questionSix = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question6");
-					var questionSeven = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question7");
-					var questionEight = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question8");
-					var questionNine = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question9");
-					var questionTen = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question10");
+					var questionOne = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question1")?.Value ?? 0;
+					var questionTwo = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question2")?.Value ?? 0;
+					var questionThree = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question3")?.Value ?? 0;
+					var questionFour = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question4")?.Value ?? 0;
+					var questionFive = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question5")?.Value ?? 0;
+					var questionSix = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question6")?.Value ?? 0;
+					var questionSeven = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question7")?.Value ?? 0;
+					var questionEight = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question8")?.Value ?? 0;
+					var questionNine = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question9")?.Value ?? 0;
+					var questionTen = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question10")?.Value ?? 0;
 
 					//Set the question scores
 					entity["ark_q1score"] = questionOne;
@@ -71,13 +72,16 @@ namespace P2171_Project6_Plugin
 					//Calculate overall score
 					entity["ark_overallscore"] = new[]
 					{
-						questionOne.Value,
-						questionTwo.Value,
-						questionThree.Value,
-						questionFour.Value,
-						questionFive.Value,
-						questionSix.Value,
-						questionSeven.Value
+						questionOne,
+						questionTwo,
+						questionThree,
+						questionFour,
+						questionFive,
+						questionSix,
+						questionSeven,
+						questionEight,
+						questionNine,
+						questionTen
 					}.Sum(); 
 
 					service.Update(entity);
