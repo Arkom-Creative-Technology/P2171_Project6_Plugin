@@ -67,6 +67,7 @@ namespace P2171_Project6_Plugin
 					entity["ark_q7score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question7")?.Value;
 					entity["ark_q8score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question8")?.Value;
 					entity["ark_q9score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question9")?.Value;
+					entity["ark_q10score"] = surveyAUDIT.GetAttributeValue<OptionSetValue>("ark_question10")?.Value;
 
 					//Calculate overall score
 					entity["ark_overallscore"] = new[]

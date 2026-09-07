@@ -92,6 +92,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculateWEMWBSSurveyScores.cs" />
+    <Compile Include="CalculateCUDITRSurveyScores.cs" />
     <Compile Include="CalculatePGSISurveyScores.cs" />
     <Compile Include="CalculateAUDITSurveyScores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
